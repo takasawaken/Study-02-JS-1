@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>javascript/jQuery1回目</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body>
+  <!-- この中に記述していく -->
+  <!-- ここから下にコードを書く -->
+<!-- 
+  <div class='button'>押したら変化</div>
+  <div class='kekka'></div> -->
+
+  <div style="position:absolute; left:10px; top:10px">JSでジャンケンを作る</div>
+
+      <!-- <canvas id="you"
+        class="screen"
+        width="400"
+        height="400"
+        style="border:1px solid #000000;">
+      </canvas>
+
+      <canvas id="me"
+        class="screen"
+        width="400"
+        height="400"
+        style="border:1px solid #000000;">
+      </canvas> -->
+
+        <div id="message1" style="position:absolute; left:10px; top:50px">
+        相手の選択は
+        </div>
+        <div id="message2" style="position:absolute; left:10px; top:80px">
+        勝敗の結果は
+        </div>
+        <form style="position:absolute; left:10px; top:110px">
+        あなたの選択は
+        <div id="mySelect">
+          <img src="./img/gu.jpg" alt="gu" style="width: 100px;">
+          <p><input type="radio" name="jyanken" id="gu">グー</p>
+          <img src="./img/choki.jpg" alt="choki" style="width: 100px;">
+          <p><input type="radio" name="jyanken" id="choki">チョキ</p>
+          <img src="./img/pa.png" alt="pa" style="width: 100px;">
+          <p><input type="radio" name="jyanken" id="pa">パー</p>
+        </div>
+        <input type="button" value="決定" onclick="game()">
+        </form>
+        
+        <script>
+
+        //0=gu, 1=choki, 2=pa 選択した手を数字表示
+
+        document.getElementById("gu").onclick = function() {
+        myNumber = 0;
+        }
+        document.getElementById("choki").onclick = function() {
+        myNumber = 1;
+        }
+        document.getElementById("pa").onclick = function() {
+        myNumber = 2;
+        }
+
+        //勝ち負けの定義　引き算
+        function game(){
+
+        hisNumber = Math.floor(Math.random()*3);
+        if( hisNumber == 0 ){
+        hisHand = "グー";
+        }
+        if( hisNumber == 1 ){
+        hisHand = "チョキ";
+        }
+        if( hisNumber == 2 ){
+        hisHand = "パー";
+        }
+        if( myNumber - hisNumber == -2 ){
+        judge = "あなたの負け";
+        }
+        if( myNumber - hisNumber == -1 ){
+        judge = "あなたの勝ち";
+        }
+        if( myNumber - hisNumber == 0 ){
+        judge = "引き分け";
+        }
+        if( myNumber - hisNumber == 1 ){
+        judge = "あなたの負け";
+        }
+        if( myNumber - hisNumber == 2 ){
+        judge = "あなたの勝ち";
+        }
+
+        //結果と相手の手の表示
+        document.getElementById("message1").innerHTML = "相手の選択は "+hisHand;
+        document.getElementById("message2").innerHTML = "勝敗の結果は "+judge;
+        }
+        </script>
+        
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="js/test.js"></script>
+
+</body>
+</html>
